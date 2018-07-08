@@ -5,7 +5,7 @@ Currently planning to have a database of users and a database of threads.
 For users, the contents will be: username, hashed passwords, phone number, and list of threads they are in.
 
 
-For threads, the contents will be: thread id, list of users in thread, and list of messages in thread.
+For threads, the contents will be: thread id, thread name. list of users in thread, and list of messages in thread.
 
 
 Messages will contain: content, username of user who sent message, and time message was sent.
