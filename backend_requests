@@ -1,0 +1,34 @@
+This is discussing all the requests the phone app makes on the servers.
+So far requests I can think of are:
+
+1. Create account -
+users asks for an account to be made for him, 
+Provides: username, phone number and a password. 
+Action: new user entered to users database
+
+2. Login to account -
+user logins to his account. 
+Provides: username, password. 
+Action: check against users database, if correct, returns updated messages by users.threads.messages
+
+3. Check messages –
+user clicks check messages button. 
+Provides: own username. 
+Action: return updated messages by users.threads.messages
+
+4. Create thread – 
+user clicks create thread. 
+Provides: own username, list of username’s what to be in thread. 
+Action:go to threads, create new thread, append users. Go to each user, append thread. 
+Return messages in thread users.thread.messages (will be blank). 
+Return error if username incorrect
+
+5. Add/delete user to thread – 
+in a thread, user clicks add/delete user. (can delete himself from thread, ie remove me from thread)
+Provides: own username, username to add/delete, thread id. 
+Action:go to thread add/remove user, go to user add/remove thread.
+
+6. Post message to thread – 
+in thread user posts a message. 
+Provides: message. 
+Action: go to thread, go to message list, append message. Return updates message list from threads.messages
