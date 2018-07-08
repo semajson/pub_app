@@ -1,14 +1,21 @@
-For back-end, there are three main data structures: users, threads and messages. 
+For back-end, there are three main data structures: user, thread and message. 
 Currently planning to have a database of users and a database of threads.
 
 
-For users, the contents will be: username, hashed passwords, phone number, and list of threads they are in.
+For user, the contents will be: username, hashed passwords, phone number, and list of threads they are in (this is list of thread ids).
+e.g. {username: 'James', phone_number: 09876456345, thread_list:[ 122, 32, 423]}
 
 
-For threads, the contents will be: thread id, thread name. list of users in thread, and list of messages in thread.
+
+For thread, the contents will be: thread id, thread name. list of users in thread (usernames), and list of messages in thread 
+(message in entirety or a message id?).
+e.g. {id: 122, name: 'The boys', messages: 
+[{content: {content_text: ‘Pub?’, time: ‘2009-06-15T13:45:30' , location: ‘Welly’}, 
+ username: ‘James’, time_sent: ‘2009-06-15T09:45:30’}] }
 
 
-Messages will contain: content, username of user who sent message, and time message was sent.
+
+Messages will contain: content, username of user who sent message, and time message was sent (not sure what format to use).
 Content has 3 options, corresponding to ‘Pub?’, ‘Pub’ and ‘Nub’. For message ‘Pub?’ and ‘Pub’, 
 there is also a time and a location (stored as a string), so that now content is an object with 3 options:
 
